@@ -17,8 +17,8 @@ Use models at endpoints like this:
   
 For deployment run
   
-`docker built -t fastai .`  
+`docker built -d fastai .`  
   
-`docker run -p 5000:5000 fastai`
+`docker run -p 5000:5000 -d fastai`
 
 And run your container on any service provider.
