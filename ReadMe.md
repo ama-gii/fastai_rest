@@ -17,7 +17,7 @@ Use models at endpoints like this:
   
 For deployment run
   
-`docker built -d fastai .`  
+`docker build -t fastai .`  
   
 `docker run -p 5000:5000 -d fastai`
 
