@@ -10,13 +10,13 @@ os.makedirs(TEXTS_PATH, exist_ok=True)
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": ["https://cihatuysal.me"]}})
 
 # learner                     model path  model name
 pet_breeds = load_learner(f"{MODELS_PATH}/pet_breeds.pkl")
 
 
-@app.route("/pet-breeds", methods=["POST"])
+@app.route("/api/pet-breeds", methods=["POST"])
 def upload_images():
     return image_category_classifier(pet_breeds)
 
