@@ -23,7 +23,6 @@ def image_category_classifier(model):
         if file and allowed_file(file.filename):
             file.save(os.path.join(IMAGES_PATH, secure_filename(file.filename)))
             result, _, _ = model.predict(f"{IMAGES_PATH}/{file.filename}")
-            result = result.replace("_", " ")
             os.remove(os.path.join(IMAGES_PATH, secure_filename(file.filename)))
             return jsonify(result), 200
     except (KeyError, FileNotFoundError):
@@ -36,7 +35,6 @@ def image_multi_category_classifier(model):
         if file and allowed_file(file.filename):
             file.save(os.path.join(IMAGES_PATH, secure_filename(file.filename)))
             result, _, _ = model.predict(f"{IMAGES_PATH}/{file.filename}")
-            result = [i.replace("_", " ") for i in result]
             os.remove(os.path.join(IMAGES_PATH, secure_filename(file.filename)))
             if result is False:
                 result = "Can't recognize image"
