@@ -21,4 +21,8 @@ For deployment run
 
 `docker run -p 5000:5000 -d fastai`
 
+for gcloud
+
+`gcloud run deploy --image gcr.io/fastai-rest/fastai`
+
 And run your container on any service provider.
