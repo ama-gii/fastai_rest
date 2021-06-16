@@ -1,7 +1,14 @@
 import os
 from flask import jsonify, request
 from werkzeug.utils import secure_filename
-from app import ALLOWED_EXTENSIONS, IMAGES_PATH
+
+
+BASE_PATH = os.getcwd()
+IMAGES_PATH = os.path.join(BASE_PATH, "images")
+MODELS_PATH = os.path.join(BASE_PATH, "models")
+TEXTS_PATH = os.path.join(BASE_PATH, "texts")
+
+ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg'}
 
 
 def allowed_file(filename):
