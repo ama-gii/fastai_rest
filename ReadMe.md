@@ -1,4 +1,4 @@
-**Docker ready fastai RestAPI**
+**Docker And GCloud Run ready fastai RestAPI**
 
 ---
 
@@ -8,21 +8,31 @@ Register models at app.py like this:
 
 `learner = load_learner(f"{MODELS_PATH}/export.pkl")`
 
-Use models at endpoints like this:
+**Use models at endpoints like this:**
 
     @app.route("/end-point", methods=["POST"])
 
     def classify():
         return image_classifier(learner)
 
-For deployment run
+**For Docker build and deployment**
 
 `docker build -t fastai .`
 
-`docker run -p 5000:5000 -d fastai`
+`docker run -p 8080:8080 -d fastai`
 
-for gcloud
+**And run your container on any service provider.**
 
-`gcloud run deploy --image gcr.io/fastai-rest/fastai`
+---
 
-And run your container on any service provider.
+**For gcloud build and deployment**
+
+**If you're using gcloud deploy your models one model at a time**
+
+`gcloud builds submit --tag gcr.io/PROJECT-ID/PROJECT-NAME`
+
+`gcloud run deploy --image gcr.io/PROJECT-ID/PROJECT-NAME`
+
+---
+
+**ALternatify you can use Google Consle to deploy directly from Github**
