@@ -35,4 +35,4 @@ Register models at app.py like this:
 
 ---
 
-**ALternatify you can use Google Consle to deploy directly from Github**
+**Alternatify you can use Google Consle to deploy directly from Github**
