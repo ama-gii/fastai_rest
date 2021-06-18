@@ -34,5 +34,3 @@ Register models at app.py like this:
 `gcloud run deploy --image gcr.io/PROJECT-ID/PROJECT-NAME`
 
 ---
-
-**Alternatify you can use Google Consle to deploy directly from Github**
