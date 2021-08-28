@@ -4,7 +4,7 @@
 
 After exporting your models with learn.export( ) put your .pkl files in models directory.
 
-Register models at app.py like this:
+Register models at main.py like this:
 
 `learner = load_learner(f"{MODELS_PATH}/export.pkl")`
 
